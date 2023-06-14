@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="app_chat.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="container" style="display: flexbox; align-items: center; justify-content: center;" >
+    <div id="loginForm" class="row-align-items-center" style="height: 100vh;">
+        <div class="mx-auto">
+        <form >
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="text" class="form-control" id="loginUser" aria-describedby="emailHelp" placeholder="Enter your name">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <input id="login" type="submit" class="btn btn-primary" style="width: 100%; padding: 10px 20px" value="Register"></input>
+        </form>
+        </div>
+    </div>
+    <div id="chatForm">
+
+        <div class="userOnline">
+            <div class="online_label">
+                <div class="online_point"></div>
+                <div class="online_text">Chat</div>
+                <button  class="btn btn-primary" id="btnCreateGroup">Group</button>
+            </div>
+            <ul id="onlineList">
+
+            </ul>
+        </div>
+        <div class="messenger">
+            <div style="padding-bottom: 15px; display: block; text-align: right;">
+                Hello, <span style="font-weight: bolder; font-size: large;" id="userName"></span>
+                <button  class="btn btn-info" id="btnLogOut">LogOut</button>
+            </div>
+            <div class="mes_top" id="mes_top">
+                <div id="writingMessenge" style="z-index: 1;"></div>
+            </div>
+            <div class="mes_bottom">
+                <form action="">
+                    <div class="form-group">
+                  <label for=""></label>
+                  <input type="text" class="form-control" name="" id="inpSendMessages" aria-describedby="helpId" placeholder="" style="width: 85%; float: left;">
+                  <input id="btnSendMessage" type="submit" class="btn btn-primary" value="Submit"></input>
+                  <small id="helpId" class="form-text text-muted">Help text</small>
+                </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div id="createGroupForm">
+        <form action="">
+        <div class="form-group animate container" id="createGroupForm_form"s>
+            <div style="display: flex;width: 100%;align-items: flex-start;">
+                <span style="margin: 10px;flex: 1;font-size: 30px;padding: 0px 10px;font-weight:bold;">Create Group Chat</span>
+                <button type="button" id="closeForm" style="font-weight: 600;border: none;background-color: white;font-size: 20px;">x</button>
+            </div>
+            <label for=""></label>
+            <input type="text" class="form-control" name="" id="createGroupForm_input" aria-describedby="helpId" placeholder="" style="width: 85%; float: left;">
+            <input id="createGroupForm_button" type="submit" class="btn btn-primary" value="Create"></input>
+            <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        </form>
+        </div>
+
+</body>
+</html>
